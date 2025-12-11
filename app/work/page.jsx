@@ -14,7 +14,7 @@ const projects = [
     category: "backend",
     title: "Enjoy Games",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus nemo dicta eius suscipit corrupti provident numquam dolorem possimus dignissimos nostrum qui et magni exercitationem, expedita inventore voluptate, modi repellat.",
+      "Enjoy Games is a digital platform specialized in selling and delivering game credits, in-game top-ups, and electronic codes quickly and reliably. The system provides a smooth purchasing experience with intelligent order processing, automatic code distribution, real-time notifications, and full tracking for every step of the order. Customers can complete their purchases without creating an account, and each product supports a specific delivery method—whether through direct code delivery, in-game ID top-up, multi-ID top-up, or account-login–based charging. Every transaction is documented with proof of delivery, ensuring full transparency and trust. Enjoy Games combines speed, accuracy, and convenience to offer gamers a reliable and effortless way to get their digital products.",
     stack: [{ name: "Laravel" }],
     image: "/assets/work/thumb1.png",
     live: "",
@@ -25,9 +25,9 @@ const projects = [
     category: "fullstack",
     title: "Digo",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus nemo dicta eius suscipit corrupti provident numquam dolorem possimus dignissimos nostrum qui et magni exercitationem, expedita inventore voluptate, modi repellat.",
+      "Digo is a technology company specializing in building modern software solutions and high-quality digital platforms. The company develops complete systems that include web applications, mobile apps, e-commerce platforms, administrative systems, payment integrations, and third-party API connections — all with a strong focus on security, performance, and user experience. With a skilled technical team, Digo transforms ideas into fully functional digital products, delivering fast, reliable, and scalable solutions tailored to different business sectors. The company’s mission is to help clients achieve real digital transformation through practical, efficient, and future-ready technologies.",
     stack: [{ name: "Laravel" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'},{ name: "JQuery" },{name: 'AJAX'}],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/image_original.jpg",
     live: "",
     github: "https://github.com/majedmaher/digo",
   },
@@ -36,7 +36,7 @@ const projects = [
     category: "mobile",
     title: "Digo",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus nemo dicta eius suscipit corrupti provident numquam dolorem possimus dignissimos nostrum qui et magni exercitationem, expedita inventore voluptate, modi repellat.",
+      "Digo is a technology company specializing in building modern software solutions and high-quality digital platforms. The company develops complete systems that include web applications, mobile apps, e-commerce platforms, administrative systems, payment integrations, and third-party API connections — all with a strong focus on security, performance, and user experience. With a skilled technical team, Digo transforms ideas into fully functional digital products, delivering fast, reliable, and scalable solutions tailored to different business sectors. The company’s mission is to help clients achieve real digital transformation through practical, efficient, and future-ready technologies.",
     stack: [{ name: "Flutter" }],
     image: "/assets/work/thumb3.png",
     live: "",
@@ -47,7 +47,7 @@ const projects = [
     category: "fullstack",
     title: "PGCC",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus nemo dicta eius suscipit corrupti provident numquam dolorem possimus dignissimos nostrum qui et magni exercitationem, expedita inventore voluptate, modi repellat.",
+      "PGCC is a specialized center dedicated to developing digital skills, empowering communities, and fostering innovation in the fields of technology and modern education. Through a wide range of training programs, workshops, and practical projects, PGCC aims to build strong technical capabilities and create opportunities for youth, professionals, and organizations to grow in today’s fast-changing digital world. The center focuses on delivering high-quality learning experiences in areas such as programming, game development, digital tools, and technical problem-solving. PGCC also collaborates with institutions, experts, and industry partners to ensure that its programs reflect real-world needs and prepare participants for successful careers. Committed to excellence and continuous development, PGCC strives to become a leading hub for digital learning, creativity, and community engagement.",
     stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
     image: "/assets/work/thumb1.png",
     live: "",
@@ -58,7 +58,7 @@ const projects = [
     category: "fullstack",
     title: "Najiz",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus nemo dicta eius suscipit corrupti provident numquam dolorem possimus dignissimos nostrum qui et magni exercitationem, expedita inventore voluptate, modi repellat.",
+      "Najiz is the unified digital platform of the Saudi Ministry of Justice, designed to provide fast, accessible, and fully digital judicial and legal services. Through Najiz, individuals, businesses, and governmental entities can access a wide range of services—such as issuing powers of attorney, reviewing cases, verifying documents, executing judgments, and managing contracts—without the need to visit judicial offices. The platform aims to enhance transparency, improve service quality, and support the digital transformation vision of the Kingdom. By integrating advanced technologies and streamlining legal processes, Najiz enables users to complete their justice-related transactions efficiently and securely.",
     stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
     image: "/assets/work/thumb2.png",
     live: "",

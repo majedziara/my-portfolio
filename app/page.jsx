@@ -2,6 +2,7 @@ import Photo from "@/components/Photo"
 import Social from "@/components/Social"
 import Stats from "@/components/Stats"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import {FiDownload} from "react-icons/fi"
 
 function Home() {
@@ -17,10 +18,12 @@ function Home() {
               I excel at crafting elegant digital experiences and I am proficient in several programming languages ​​and technologies.
             </p>
             <div className="flex flex-col lg:flex-row items-center gap-8">
-              <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
-                <span>Download CV</span>
-                <FiDownload className="text-lg" />
-              </Button>
+              <Link href='/assets/majed_ziara_cv.pdf' target="_blank">
+                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+                  <span>Download CV</span>
+                  <FiDownload className="text-lg" />
+                </Button>
+              </Link>
               <div className="mb-8 lg:mb-0">
                 <Social containerStyles='flex gap-6' iconStyles='w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary transition-all duration-500' />
               </div>
