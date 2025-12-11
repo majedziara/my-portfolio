@@ -11,6 +11,61 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
+    category: "fullstack",
+    title: "Digo",
+    description:
+      "Digo is a technology company specializing in building modern software solutions and high-quality digital platforms. The company develops complete systems that include web applications, mobile apps, e-commerce platforms, administrative systems, payment integrations, and third-party API connections — all with a strong focus on security, performance, and user experience. With a skilled technical team, Digo transforms ideas into fully functional digital products, delivering fast, reliable, and scalable solutions tailored to different business sectors. The company’s mission is to help clients achieve real digital transformation through practical, efficient, and future-ready technologies.",
+    stack: [{ name: "Laravel" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'},{ name: "JQuery" },{name: 'AJAX'}],
+    image: "/assets/work/digo.webp",
+    live: "",
+    github: "https://github.com/majedmaher/digo",
+  },
+  {
+    num: "02",
+    category: "mobile",
+    title: "Digo",
+    description:
+      "Digo is a technology company specializing in building modern software solutions and high-quality digital platforms. The company develops complete systems that include web applications, mobile apps, e-commerce platforms, administrative systems, payment integrations, and third-party API connections — all with a strong focus on security, performance, and user experience. With a skilled technical team, Digo transforms ideas into fully functional digital products, delivering fast, reliable, and scalable solutions tailored to different business sectors. The company’s mission is to help clients achieve real digital transformation through practical, efficient, and future-ready technologies.",
+    stack: [{ name: "Flutter" }],
+    image: "/assets/work/digo-app.webp",
+    live: "",
+    github: "https://github.com/majedmaher/digo_app_flutter",
+  },
+  {
+    num: "03",
+    category: "fullstack",
+    title: "PGCC",
+    description:
+      "PGCC is a specialized center dedicated to developing digital skills, empowering communities, and fostering innovation in the fields of technology and modern education. Through a wide range of training programs, workshops, and practical projects, PGCC aims to build strong technical capabilities and create opportunities for youth, professionals, and organizations to grow in today’s fast-changing digital world. The center focuses on delivering high-quality learning experiences in areas such as programming, game development, digital tools, and technical problem-solving. PGCC also collaborates with institutions, experts, and industry partners to ensure that its programs reflect real-world needs and prepare participants for successful careers. Committed to excellence and continuous development, PGCC strives to become a leading hub for digital learning, creativity, and community engagement.",
+    stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
+    image: "/assets/work/pgcc.webp",
+    live: "",
+    github: "https://github.com/majedmaher/pgcc-app",
+  },
+  {
+    num: "04",
+    category: "fullstack",
+    title: "Najiz",
+    description:
+      "Najiz is the unified digital platform of the Saudi Ministry of Justice, designed to provide fast, accessible, and fully digital judicial and legal services. Through Najiz, individuals, businesses, and governmental entities can access a wide range of services—such as issuing powers of attorney, reviewing cases, verifying documents, executing judgments, and managing contracts—without the need to visit judicial offices. The platform aims to enhance transparency, improve service quality, and support the digital transformation vision of the Kingdom. By integrating advanced technologies and streamlining legal processes, Najiz enables users to complete their justice-related transactions efficiently and securely.",
+    stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
+    image: "/assets/work/najiz-law.webp",
+    live: "",
+    github: "https://github.com/majedmaher/najiz-law-app",
+  },
+  {
+    num: "05",
+    category: "fullstack",
+    title: "wafeeer",
+    description:
+      "Wafeeer is an innovative online platform that provides users with exclusive discount coupons from a variety of local and e-commerce stores, helping them save money and access the best deals effortlessly. The platform was built from scratch using HTML, CSS, JavaScript, jQuery, AJAX, and Laravel, with a strong focus on responsive design to ensure a smooth user experience across all devices. The platform features an interactive user interface that allows users to quickly search for deals, browse coupons, and take advantage of various discounts. A custom API was developed to integrate seamlessly with mobile applications, ensuring that offers and discounts are updated in real-time on smartphones. The project emphasizes a flexible content management system for easy addition and updating of coupons, efficient user and interaction management, and a high-performance design for an enjoyable browsing experience. Wafeer’s main goal is to help users manage their personal expenses effectively while maximizing savings on their purchases.",
+    stack: [{ name: "Laravel" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'},{name: 'Ajax'},{name: 'JQuery'}],
+    image: "/assets/work/wafeer.webp",
+    live: "",
+    github: "",
+  },
+  {
+    num: "06",
     category: "backend",
     title: "Enjoy Games",
     description:
@@ -19,50 +74,6 @@ const projects = [
     image: "/assets/work/thumb1.png",
     live: "",
     github: "https://github.com/majedmaher/smart_digital_shop",
-  },
-  {
-    num: "02",
-    category: "fullstack",
-    title: "Digo",
-    description:
-      "Digo is a technology company specializing in building modern software solutions and high-quality digital platforms. The company develops complete systems that include web applications, mobile apps, e-commerce platforms, administrative systems, payment integrations, and third-party API connections — all with a strong focus on security, performance, and user experience. With a skilled technical team, Digo transforms ideas into fully functional digital products, delivering fast, reliable, and scalable solutions tailored to different business sectors. The company’s mission is to help clients achieve real digital transformation through practical, efficient, and future-ready technologies.",
-    stack: [{ name: "Laravel" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'},{ name: "JQuery" },{name: 'AJAX'}],
-    image: "/assets/work/image_original.jpg",
-    live: "",
-    github: "https://github.com/majedmaher/digo",
-  },
-  {
-    num: "03",
-    category: "mobile",
-    title: "Digo",
-    description:
-      "Digo is a technology company specializing in building modern software solutions and high-quality digital platforms. The company develops complete systems that include web applications, mobile apps, e-commerce platforms, administrative systems, payment integrations, and third-party API connections — all with a strong focus on security, performance, and user experience. With a skilled technical team, Digo transforms ideas into fully functional digital products, delivering fast, reliable, and scalable solutions tailored to different business sectors. The company’s mission is to help clients achieve real digital transformation through practical, efficient, and future-ready technologies.",
-    stack: [{ name: "Flutter" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "https://github.com/majedmaher/digo_app_flutter",
-  },
-  {
-    num: "04",
-    category: "fullstack",
-    title: "PGCC",
-    description:
-      "PGCC is a specialized center dedicated to developing digital skills, empowering communities, and fostering innovation in the fields of technology and modern education. Through a wide range of training programs, workshops, and practical projects, PGCC aims to build strong technical capabilities and create opportunities for youth, professionals, and organizations to grow in today’s fast-changing digital world. The center focuses on delivering high-quality learning experiences in areas such as programming, game development, digital tools, and technical problem-solving. PGCC also collaborates with institutions, experts, and industry partners to ensure that its programs reflect real-world needs and prepare participants for successful careers. Committed to excellence and continuous development, PGCC strives to become a leading hub for digital learning, creativity, and community engagement.",
-    stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "https://github.com/majedmaher/pgcc-app",
-  },
-  {
-    num: "05",
-    category: "fullstack",
-    title: "Najiz",
-    description:
-      "Najiz is the unified digital platform of the Saudi Ministry of Justice, designed to provide fast, accessible, and fully digital judicial and legal services. Through Najiz, individuals, businesses, and governmental entities can access a wide range of services—such as issuing powers of attorney, reviewing cases, verifying documents, executing judgments, and managing contracts—without the need to visit judicial offices. The platform aims to enhance transparency, improve service quality, and support the digital transformation vision of the Kingdom. By integrating advanced technologies and streamlining legal processes, Najiz enables users to complete their justice-related transactions efficiently and securely.",
-    stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
-    image: "/assets/work/thumb2.png",
-    live: "",
-    github: "https://github.com/majedmaher/najiz-law-app",
   },
 ];
 
