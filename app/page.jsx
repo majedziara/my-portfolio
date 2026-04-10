@@ -3,7 +3,7 @@ import Social from "@/components/Social"
 import Stats from "@/components/Stats"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import {FiDownload} from "react-icons/fi"
+import { FiDownload } from "react-icons/fi"
 
 function Home() {
   return (
@@ -18,7 +18,7 @@ function Home() {
               I excel at crafting elegant digital experiences and I am proficient in several programming languages ​​and technologies.
             </p>
             <div className="flex flex-col lg:flex-row items-center gap-8">
-              <Link href='/assets/majed-ziara-full-stack-laravel-dev.pdf' target="_blank">
+              <Link href='/assets/majed-ziara-cv.pdf' target="_blank">
                 <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
                   <span>Download CV</span>
                   <FiDownload className="text-lg" />
@@ -30,7 +30,7 @@ function Home() {
             </div>
           </div>
           <div className='order-1 lg:order-2 mb-8 lg:mb-0'>
-            <Photo/>
+            <Photo />
           </div>
         </div>
       </div>
