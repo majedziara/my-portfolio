@@ -10,7 +10,25 @@ import 'swiper/css'
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
-    num: "01",
+  num: "01",
+  category: "fullstack",
+  title: "Khota Educational Center",
+  description:
+    "Khota Educational Center is a modern educational platform designed to provide an engaging and inspiring learning experience for children aged 3 to 12. The website was developed with a strong focus on user experience, visual storytelling, and parent trust, combining educational professionalism with a warm and child-friendly interface. The platform showcases the center’s courses, workshops, educational philosophy, achievements, and teaching staff through a fully responsive and visually appealing design. The project emphasizes clean UI/UX principles, modern web performance, accessibility, and SEO optimization to ensure smooth navigation across all devices. Special attention was given to creating an emotional connection with parents through thoughtful design elements, soft color palettes, and interactive sections that reflect the center’s mission of building confidence, creativity, and future skills for children.",
+  stack: [
+    { name: "Next.js" },
+    { name: "React" },
+    { name: "Tailwind CSS" },
+    { name: "Framer Motion" },
+    { name: "Responsive Design" },
+    { name: "SEO Optimization" }
+  ],
+  image: "/assets/work/khota.webp",
+  live: "https://khota.vercel.app/",
+  github: "https://github.com/majedziara/khota-app",
+},
+  {
+    num: "02",
     category: "fullstack",
     title: "Digo",
     description:
@@ -18,10 +36,10 @@ const projects = [
     stack: [{ name: "Laravel" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'},{ name: "JQuery" },{name: 'AJAX'}],
     image: "/assets/work/digo.webp",
     live: "",
-    github: "https://github.com/majedmaher/digo",
+    github: "https://github.com/majedziara/digo",
   },
   {
-    num: "02",
+    num: "03",
     category: "mobile",
     title: "Digo",
     description:
@@ -29,10 +47,10 @@ const projects = [
     stack: [{ name: "Flutter" }],
     image: "/assets/work/digo-app.webp",
     live: "",
-    github: "https://github.com/majedmaher/digo_app_flutter",
+    github: "https://github.com/majedziara/digo_app_flutter",
   },
   {
-    num: "03",
+    num: "04",
     category: "fullstack",
     title: "PGCC",
     description:
@@ -40,10 +58,10 @@ const projects = [
     stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
     image: "/assets/work/pgcc.webp",
     live: "",
-    github: "https://github.com/majedmaher/pgcc-app",
+    github: "https://github.com/majedziara/pgcc-app",
   },
   {
-    num: "04",
+    num: "05",
     category: "fullstack",
     title: "Najiz",
     description:
@@ -51,10 +69,10 @@ const projects = [
     stack: [{ name: "Laravel" },{ name: "Livewire" },{name: 'Html 5'},{ name: "Css 3" },{name: 'Javascript'}],
     image: "/assets/work/najiz-law.webp",
     live: "",
-    github: "https://github.com/majedmaher/najiz-law-app",
+    github: "https://github.com/majedziara/najiz-law-app",
   },
   {
-    num: "05",
+    num: "06",
     category: "fullstack",
     title: "wafeeer",
     description:
@@ -65,7 +83,7 @@ const projects = [
     github: "",
   },
   {
-    num: "06",
+    num: "07",
     category: "backend",
     title: "Enjoy Games",
     description:
@@ -73,7 +91,7 @@ const projects = [
     stack: [{ name: "Laravel" }],
     image: "/assets/work/thumb1.png",
     live: "",
-    github: "https://github.com/majedmaher/smart_digital_shop",
+    github: "https://github.com/majedziara/smart_digital_shop",
   },
 ];
 
