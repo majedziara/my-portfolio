@@ -2,10 +2,6 @@
 
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa"
 import {motion} from 'framer-motion'
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
 import ContactForm from "@/components/ContactForm"
 
 const info = [

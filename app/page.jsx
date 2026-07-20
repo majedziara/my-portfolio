@@ -18,7 +18,7 @@ function Home() {
               I excel at crafting elegant digital experiences and I am proficient in several programming languages ​​and technologies.
             </p>
             <div className="flex flex-col lg:flex-row items-center gap-8">
-              <Link href='/assets/majed-ziara-cv.pdf' target="_blank">
+              <Link href='/assets/majed-cv.pdf' target="_blank">
                 <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
                   <span>Download CV</span>
                   <FiDownload className="text-lg" />
