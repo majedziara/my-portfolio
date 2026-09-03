@@ -9,10 +9,10 @@ function Photo() {
             <motion.div
             initial={{opacity: 0}} animate={{opacity: 1, transition: {delay: 2.4, duration: 0.4, ease: 'easeInOut'}}}
             className='w-[298px] h-[298px] lg:w-[420px] lg:h-[420px] mix-blend-difference absolute'>
-                <Image src="/assets/my-photo.webp" priority quality={100} alt='' fill className='object-contain' />
+                <Image src="/assets/my-picture.webp" priority quality={100} alt='' fill className='object-contain rounded-full' />
             </motion.div>
 
-            <motion.svg className='w-[300px] h-[300px] lg:w-[425px] lg:h-[425px]'
+            <motion.svg className='w-[310px] h-[310px] lg:w-[430px] lg:h-[430px] -ml-1 -top-15'
             fill='transparent'
             viewBox='0 0 506 506'
             xmlns='http://www.w3.org/2000/svg'>
