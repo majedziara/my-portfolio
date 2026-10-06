@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Majed Ziara — Portfolio
 
-## Getting Started
+Personal portfolio for Majed Ziara, a Laravel backend and full-stack engineer based in Gaza, Palestine and available for remote work.
 
-First, run the development server:
+## Professional focus
+
+- Laravel applications, REST APIs, authentication, permissions, queues, events, and notifications
+- Business workflows, payments, webhooks, invoicing, and third-party integrations
+- Next.js, React, TypeScript, Tailwind CSS, responsive UI, SEO, and Arabic/English experiences
+- MySQL, PostgreSQL, Redis, Git/GitHub, Linux VPS, Nginx, and production support
+
+## Featured work
+
+- Enjoy Games digital store — Laravel backend, order fulfillment, Paymob KSA, Zoho Books, wallet, points, and operational workflows
+- Emtedad Charity Platform — bilingual Laravel and Next.js charity-management platform
+- DIGO Internal Management System — attendance, leave, payroll, finance, employee records, and reporting
+- Khota Educational Center — responsive Next.js website with motion and SEO
+- DIGO multilingual website — Next.js App Router, TypeScript, next-intl, and RTL/LTR support
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Contact
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Email: [majedziyara@gmail.com](mailto:majedziyara@gmail.com)
+- Portfolio: [majed-ziara-portfolio.vercel.app](https://majed-ziara-portfolio.vercel.app/)
+- LinkedIn: [linkedin.com/in/majedziara](https://www.linkedin.com/in/majedziara/)
+- GitHub: [github.com/majedziara](https://github.com/majedziara/)

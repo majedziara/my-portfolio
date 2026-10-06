@@ -12,9 +12,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Majed Ziara | Software Developer Portfolio",
+  title: "Majed Ziara | Laravel Backend & Full-Stack Engineer",
   description:
-    "Portfolio of Majed Ziara, a software developer specializing in back-end, front-end, full-stack development, mobile apps, and creative digital solutions.",
+    "Portfolio of Majed Ziara, a Laravel backend and full-stack engineer building APIs, business systems, payments, integrations, and multilingual Next.js applications.",
   keywords: [
     "Majed Ziara",
     "Majed Ziara Portfolio",
@@ -31,16 +31,14 @@ export const metadata = {
     "Responsive Web Design",
     "JavaScript Developer",
     "HTML CSS JavaScript",
-    "Flutter Mobile Developer",
-    "Cross-Platform App Developer",
-    "Mobile App Development",
     "Freelance Developer",
     "IT Developer Portfolio",
     "Tech Projects Portfolio",
     "Web Applications Developer",
     "Digital Solutions Developer",
-    "UI Development",
-    "Clean Code Architect",
+    "Payment Integration",
+    "Laravel REST APIs",
+    "Multilingual Web Applications",
     "Scalable App Development"
   ]
 };

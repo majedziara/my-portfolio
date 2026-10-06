@@ -82,10 +82,10 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
     >
-      <h3 className="text-4xl text-accent">Let's work together</h3>
+      <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
       <p className="text-white/60">
         Looking for a professional web application, custom business system, or
-        SaaS solution? Share your project details, and I'll get back to you with
+        SaaS solution? Share your project details, and I&apos;ll get back to you with
         the best approach and a clear development plan.{" "}
       </p>
 
@@ -134,9 +134,10 @@ export default function ContactForm() {
           className="w-full px-4 py-3 bg-[#1f1f23] border border-[#3f3f46] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-accent appearance-none"
         >
           <option value="">Select a service</option>
-          <option value="web">Web Development</option>
-          <option value="mobile">Mobile Development</option>
-          <option value="design">Graphic Design & Motion Graphic</option>
+          <option value="laravel-backend">Laravel Backend Development</option>
+          <option value="full-stack">Full-Stack Web Application</option>
+          <option value="integrations">Payments & API Integrations</option>
+          <option value="maintenance">Maintenance & Product Support</option>
         </select>
         <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
           <svg

@@ -4,20 +4,24 @@ import CountUp from 'react-countup';
 
 const stats = [
     {
-        num: 3,
+        num: 4,
+        suffix: '+',
         text: 'Years of experience'
     },
     {
-        num: 12,
+        num: 10,
+        suffix: '+',
         text: 'Projects completed'
     },
     {
-        num: 3,
-        text: 'Technologies mastered'
+        num: 5,
+        suffix: '–6',
+        text: 'Client sites delivered at DIGO'
     },
     {
-        num: 200,
-        text: 'Code commits'
+        num: 2,
+        suffix: '',
+        text: 'Languages supported in products'
     },
 ]
 
@@ -38,13 +42,15 @@ function Stats() {
       }
     );
 
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
+    const observedElement = statsRef.current;
+
+    if (observedElement) {
+      observer.observe(observedElement);
     }
 
     return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
+      if (observedElement) {
+        observer.unobserve(observedElement);
       }
     };
   }, []);
@@ -59,6 +65,7 @@ function Stats() {
                 {inView && (
                   <CountUp 
                     end={stat.num} 
+                    suffix={stat.suffix}
                     duration={5} 
                     delay={0.5} 
                     className='text-4xl lg:text-6xl font-extrabold' 

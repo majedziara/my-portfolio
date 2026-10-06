@@ -3,22 +3,23 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa"
 import {motion} from 'framer-motion'
 import ContactForm from "@/components/ContactForm"
+import { profile } from "@/data/profile"
 
 const info = [
   {
     icon: <FaPhoneAlt />,
     title: 'Phone',
-    description: '(+972) 595 634 627'
+    description: profile.phone
   },
   {
     icon: <FaEnvelope />,
-    title: 'Emain',
-    description: 'majedmaher200@gmail.com'
+    title: 'Email',
+    description: profile.email
   },
   {
     icon: <FaMapMarkerAlt />,
     title: 'Address',
-    description: 'Palestine, Gaza'
+    description: profile.location
   },
 ]
 
