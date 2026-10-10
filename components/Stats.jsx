@@ -1,86 +1,22 @@
-"use client"
-import { useState, useEffect, useRef } from 'react';
-import CountUp from 'react-countup';
-
 const stats = [
-    {
-        num: 4,
-        suffix: '+',
-        text: 'Years of experience'
-    },
-    {
-        num: 10,
-        suffix: '+',
-        text: 'Projects completed'
-    },
-    {
-        num: 5,
-        suffix: '–6',
-        text: 'Client sites delivered at DIGO'
-    },
-    {
-        num: 2,
-        suffix: '',
-        text: 'Languages supported in products'
-    },
-]
-
-function Stats() {
-  const [inView, setInView] = useState(false); // لحفظ حالة ظهور القسم في العرض
-  const statsRef = useRef(null); // المرجع الذي سنستخدمه لمراقبة القسم
-
-  // استخدام IntersectionObserver للكشف عن ظهور القسم
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true); // إذا دخل القسم في العرض، يبدأ العد
-        }
-      },
-      {
-        threshold: 0.2, // القسم يجب أن يكون مرئياً بنسبة 20% ليبدأ العد
-      }
-    );
-
-    const observedElement = statsRef.current;
-
-    if (observedElement) {
-      observer.observe(observedElement);
-    }
-
-    return () => {
-      if (observedElement) {
-        observer.unobserve(observedElement);
-      }
-    };
-  }, []);
-
+  { value: "4+", text: "Years of experience" },
+  { value: "10+", text: "Projects completed" },
+  { value: "5–6", text: "Client sites delivered at DIGO" },
+  { value: "2", text: "Languages supported in products" },
+];
+export default function Stats() {
   return (
-    <section className='pt-4 pb-12'>
+    <section aria-label="Professional highlights" className="pt-4 pb-12">
       <div className="container mx-auto">
-        <div ref={statsRef} className='flex flex-wrap gap-6 max-w-[80vw] mx-auto lg:max-w-none'>
-          {stats.map((stat, index) => {
-            return (
-              <div key={index} className='flex-1 flex gap-4 justify-center items-center lg:justify-start'>
-                {inView && (
-                  <CountUp 
-                    end={stat.num} 
-                    suffix={stat.suffix}
-                    duration={5} 
-                    delay={0.5} 
-                    className='text-4xl lg:text-6xl font-extrabold' 
-                  />
-                )}
-                <p className={`${stat.text.length < 15 ? 'max-w-[100px]' : 'max-w-[150px]'} leading-snug text-white/80`}>
-                  {stat.text}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat) => (
+            <div key={stat.text} className="flex flex-col sm:flex-row gap-4 items-center lg:justify-start">
+              <dt className="max-w-[150px] leading-snug text-white/80 order-2">{stat.text}</dt>
+              <dd className="text-4xl lg:text-6xl font-extrabold order-1">{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
 }
-
-export default Stats;

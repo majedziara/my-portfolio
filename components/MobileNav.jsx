@@ -1,57 +1,25 @@
 "use client";
-
-import { DialogTitle } from "@radix-ui/react-dialog";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { CiMenuFries } from "react-icons/ci";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-const links = [
-    {
-        name: 'home',
-        path: '/'
-    },
-    {
-        name: 'services',
-        path: '/services'
-    },
-    {
-        name: 'resume',
-        path: '/resume'
-    },
-    {
-        name: 'work',
-        path: '/work'
-    },
-    {
-        name: 'contact',
-        path: '/contact'
-    },
-]
-
-function MobileNav() {
-    const pathname = usePathname();
+// Download the dialog and focus-management code only when the menu is opened.
+const MobileMenu = dynamic(() => import("./MobileMenu"), {
+  loading: () => <p role="status" className="sr-only">Loading navigation…</p>,
+});
+export default function MobileNav() {
+  const [mounted, setMounted] = useState(false);
+  const [open, setOpen] = useState(false);
+  const triggerRef = useRef(null);
   return (
-        <Sheet>
-            <SheetTrigger className="flex justify-center items-center hover:cursor-pointer">
-                <CiMenuFries className="text-[32px] text-accent" />
-            </SheetTrigger>
-            <SheetContent className="flex flex-col">
-                <DialogTitle className="mt-32 mb-40 text-center text-2xl">
-                    <Link href='/'>
-                        <h1 className="text-4xl font-semibold">Majed<span className="text-accent">.</span></h1>
-                    </Link>
-                </DialogTitle>
-                <nav className="flex flex-col justify-center items-center gap-8">
-                    {links.map((link, index)=> {
-                        return <Link href={link.path} key={index} className={`${link.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all`}>
-                            {link.name}
-                        </Link>
-                    })}
-                </nav>
-            </SheetContent>
-        </Sheet>
-  )
+    <>
+      <button ref={triggerRef} type="button" aria-label="Open navigation menu" aria-haspopup="dialog"
+        aria-expanded={open} aria-controls={mounted ? "mobile-navigation" : undefined}
+        onClick={() => { setMounted(true); setOpen(true); }}
+        className="flex min-h-11 min-w-11 justify-center items-center cursor-pointer">
+        <CiMenuFries aria-hidden="true" className="text-[32px] text-accent" />
+      </button>
+      {mounted && <MobileMenu open={open} onOpenChange={setOpen} onCloseFocus={() => triggerRef.current?.focus()} />}
+    </>
+  );
 }
-
-export default MobileNav

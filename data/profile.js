@@ -62,7 +62,7 @@ export const projects = [
     description:
       "Built the Laravel backend for a digital-products and game top-up store. Designed order and fulfillment pipelines, code inventory, checkout, coupons, wallet and points, support tickets, dashboards, notifications, and delivery evidence.",
     stack: ["Laravel", "MySQL", "Sanctum", "Paymob KSA", "Zoho Books", "Queues", "Webhooks"],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/thumb1.webp",
     live: "",
     github: "https://github.com/majedziara/enjoy-games_a-smart-digital-shop",
   },
@@ -74,7 +74,7 @@ export const projects = [
     description:
       "Developing a bilingual charity platform for humanitarian cases, donations, partners, members, content, and administrative reporting. The system includes role-based access, translated content, file workflows, email verification, and a payment-ready architecture.",
     stack: ["Laravel", "Next.js", "MySQL", "Spatie Permission", "REST APIs", "i18n"],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/thumb2.webp",
     live: "",
     github: "https://github.com/majedziara/emtedad-laravel",
   },
@@ -134,7 +134,7 @@ export const projects = [
     description:
       "Built a responsive business website for an advertising company, translating brand content into reusable sections and a clear, fast experience across screen sizes.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Responsive UI"],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/thumb3.webp",
     live: "",
     github: "https://github.com/majedziara/ebdaa-app",
   },
