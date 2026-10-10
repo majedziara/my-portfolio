@@ -26,6 +26,26 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## SEO and deployment
+
+Each page includes its own title, description, canonical URL, Open Graph metadata, and Twitter card. Shared configuration is in `lib/seo.js`. The site includes structured data, `/robots.txt`, `/sitemap.xml`, a 1200 × 630 sharing image, and custom site icons.
+
+The canonical domain defaults to `https://majed-ziara-portfolio.vercel.app`. Set `SITE_URL` in your hosting environment before building if you use a different domain. Update the domain printed in the sharing image when changing it.
+
+After deploying:
+
+1. Open Google Search Console for the production URL and click **Verify**. Both the supplied verification meta tag and `/googledb9beca33381b118.html` are installed.
+2. Submit `https://majed-ziara-portfolio.vercel.app/sitemap.xml` under **Sitemaps**, using your actual domain if it differs.
+3. Inspect the homepage and key pages with **URL inspection**, then request indexing.
+
+Keywords are included as requested; [Google does not use the keywords meta tag for indexing or ranking](https://developers.google.com/search/docs/crawling-indexing/special-tags). Titles, descriptions, crawlable content, and performance receive the main attention. Deployment and verification do not guarantee a ranking or immediate indexing.
+
+Copy `.env.example` to `.env.local` for local configuration. Configure `MONGODB_URI` and `DATABASE_NAME` for real contact submissions. Vercel Analytics runs when deployed on Vercel.
+
+Run `npm run lint` and `npm run build` before deploying. Measure Lighthouse against `npm run start`, since development mode includes extra scripts and compilation overhead.
+
+See [the SEO, performance, and accessibility verification report](docs/seo-performance.md) for measured results, asset reductions, and remaining checks after deployment.
+
 ## Contact
 
 - Email: [majedziyara@gmail.com](mailto:majedziyara@gmail.com)
