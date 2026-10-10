@@ -166,12 +166,24 @@
 .skip-link:focus { transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-screen-transition] { display: none !important; }
+  [data-page-reveal], [data-portrait-reveal] { opacity: 1 !important; }
+
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+@keyframes resume-dot-pulse {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.resume-dot {
+  animation: resume-dot-pulse 0.5s ease-out infinite alternate;
 }
 
 .resume-scroll {

@@ -3,6 +3,7 @@ import { SiDocker, SiLaravel, SiMysql, SiNextdotjs, SiPostgresql, SiRedis, SiTai
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { education as educationItems, experience as experienceItems, profile } from '@/data/profile'
+import AnimatedPage from '@/components/AnimatedPage'
 
 const about = {
   title: 'About me',
@@ -104,7 +105,7 @@ const skills = {
 
 function Resume() {
   return (
-    <div className='min-h-[80vh] flex items-center justify-center py-12 lg:py-0'
+    <AnimatedPage className='min-h-[80vh] flex items-center justify-center py-12 lg:py-0'
     >
       <div className="container mx-auto">
         <Tabs orientation='vertical' defaultValue='experience' className='flex flex-col lg:flex-row gap-[60px]'>
@@ -126,7 +127,7 @@ function Resume() {
                         <span className='text-accent'>{item.duration}</span>
                         <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.position}</h3>
                         <div className='flex items-center gap-3'>
-                          <span aria-hidden="true" className='w-[6px] h-[6px] rounded-full bg-accent'></span>
+                          <span aria-hidden="true" className='resume-dot w-[6px] h-[6px] rounded-full bg-accent'></span>
                           <p className='text-white/60'>{item.company}</p>
                         </div>
                         <p className='text-sm text-white/70 text-center lg:text-left mt-2'>{item.summary}</p>
@@ -147,7 +148,7 @@ function Resume() {
                         <span className='text-accent'>{item.duration}</span>
                         <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.degree}</h3>
                         <div className='flex items-center gap-3'>
-                          <span aria-hidden="true" className='w-[6px] h-[6px] rounded-full bg-accent flex-none'></span>
+                          <span aria-hidden="true" className='resume-dot w-[6px] h-[6px] rounded-full bg-accent flex-none'></span>
                           <p className='text-white/60'>{item.institution}</p>
                         </div>
                       </li>
@@ -197,7 +198,7 @@ function Resume() {
           </div>
         </Tabs>
       </div>
-    </div>
+    </AnimatedPage>
   )
 }
 
