@@ -1,5 +1,6 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
+import AnimatedPage from "@/components/AnimatedPage";
 import { profile } from "@/data/profile";
 import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata(
@@ -14,7 +15,7 @@ const info = [
 ];
 export default function Contact() {
   return (
-    <section className="py-6">
+    <AnimatedPage as="section" className="py-6">
       <div className="container mx-auto">
         <h1 className="h2 mb-10">Contact me</h1>
         <div className="flex flex-col lg:flex-row gap-[30px]">
@@ -34,6 +35,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedPage>
   );
 }

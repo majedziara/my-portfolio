@@ -1,5 +1,6 @@
 {
   "date": "2026-10-10",
+  "scope": "Historical measurements before animation restoration; not current animated-version scores",
   "lighthouseVersion": "13.5.0",
   "results": [
     {

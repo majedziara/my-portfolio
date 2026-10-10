@@ -2,6 +2,7 @@ import { BsArrowDownRight } from "react-icons/bs"
 import Link from "next/link"
 import { services } from "@/data/profile"
 import StructuredData from "@/components/StructuredData"
+import AnimatedPage from "@/components/AnimatedPage"
 import { pageMetadata, siteUrl } from "@/lib/seo"
 export const metadata = pageMetadata("Laravel & Full-Stack Development Services", "Laravel backend development, full-stack Next.js applications, payment and API integrations, and ongoing product support by Majed Ziara. Available remotely.", "/services")
 
@@ -18,7 +19,7 @@ function Services() {
               url: `${siteUrl}/services`, provider: { "@id": `${siteUrl}/#person` } },
           })),
         }} />
-        <div
+        <AnimatedPage
         className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16"
         >
           {services.map((service, index)=> {
@@ -38,7 +39,7 @@ function Services() {
               <div className="border-b border-white/20 w-full"></div>
             </div>
           })}
-        </div>
+        </AnimatedPage>
       </div>
     </section>
   )

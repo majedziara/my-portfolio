@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import WorkGallery from "@/components/WorkGallery";
+import AnimatedPage from "@/components/AnimatedPage";
 import StructuredData from "@/components/StructuredData";
 import { projects } from "@/data/profile";
 import { pageMetadata, siteUrl } from "@/lib/seo";
@@ -11,7 +12,7 @@ export const metadata = pageMetadata(
 );
 export default function Work() {
   return (
-    <section className="py-6 pb-12">
+    <AnimatedPage as="section" className="py-6 pb-12">
       <div className="container mx-auto">
         <h1 className="h2 mb-6">Selected projects</h1>
         <StructuredData data={{
@@ -53,7 +54,7 @@ export default function Work() {
           ))}
         </WorkGallery>
       </div>
-    </section>
+    </AnimatedPage>
   );
 }
 function ProjectLink({ href, label, children }) {

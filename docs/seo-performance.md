@@ -9,7 +9,7 @@ Verified locally on 2026-10-10 against the production build of Next.js 16.4.0 an
 - Google verification using both the provided meta tag and the original HTML verification file.
 - A sitemap containing the five public pages and a robots file excluding API routes.
 - Person, WebSite, Service, and project structured data reflecting the portfolio content.
-- Immediate rendering of page content and statistics, with stable image dimensions and high-priority loading for the first visible image.
+- Server-rendered page content and final statistics, with stable image dimensions and high-priority loading for the first visible image.
 - A native scroll-snap project gallery with small JavaScript controls. All project descriptions are rendered in the initial HTML. Resume content is rendered on the server, with native keyboard-accessible scroll regions.
 - Deferred mobile dialog loading, disabled automatic route prefetching, reduced-motion support, keyboard navigation, accessible form labels and status messages, focus indicators, and a skip link.
 - Security response headers, bounded contact fields, server-side validation, and a reused MongoDB connection pool.
@@ -49,6 +49,8 @@ The full audit still reports five entries from one development dependency chain:
 
 ## Lighthouse results
 
+These measurements were captured before restoring the original animations. They are historical results and do not describe the current animated version. The restored page reveals intentionally wait for the original animation timing, which can affect paint measurements.
+
 Lighthouse 13.5.0 against the local production server. The resume page was remeasured after its final optimization; its mobile score is the median of three runs (91, 87, 89). Other rows use the final full-page audit for those routes.
 
 | Page | Mobile performance | Desktop performance | Accessibility | Best practices | SEO |
@@ -63,7 +65,19 @@ All measured runs had a cumulative layout shift of **0**. The homepage mobile ru
 
 Machine-readable scores are saved in [lighthouse-results.json](lighthouse-results.json). These are simulated local lab measurements, not field Core Web Vitals or guaranteed hosted scores.
 
+## Animation restoration
+
+Restored the screen transition with four staggered strips, the original page reveal timing (2.4 s delay, 0.4 s fade), portrait fades, 15 s reversing ring rotation and dash animation, five-second statistics counters, and the half-second alternating resume dot opacity. The animations run on initial loading and navigation. Reduced-motion preferences show content immediately with static decorations, and a no-JavaScript fallback keeps the content visible. Metadata, server-rendered content, image optimization, and accessible controls are retained.
+
+The original Framer Motion and CountUp versions are pinned. Overrides retain the compatible original `motion-dom` and `motion-utils` versions because newer transitive releases failed to build with the original Framer Motion version.
+
+After restoration, lint and production build passed. Chrome checks verified initial and route transitions, ring rotation and changing dash patterns, both resume dot groups, page reveals, and counters. Reduced-motion and no-JavaScript visibility checks passed. Responsive checks at 320, 375, and 1280 pixels and the accessibility checks above passed again with no browser errors or failed resource loads. Production dependencies still report zero known vulnerabilities.
+
 ## After deployment
+
+Google Analytics uses measurement ID `G-T8HQENKS1N`. Its Google tag is loaded once from the root layout using `next/script` after hydration, and is enabled in production builds. Development sessions are excluded. Pageviews use GA4's automatic measurement, so no duplicate manual route events are emitted. In the web data stream's Enhanced measurement settings, enable **Page views → Page changes based on browser history events** to record Next.js client navigation. See [Google's SPA measurement guide](https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications). After deployment, confirm visits and navigation in Realtime or DebugView.
+
+The integration passed lint and production build. A Chrome check loaded the actual Google tag once, verified one automatic pageview per initial load, client navigation, and browser back, and confirmed one initialization across routes. Collection requests were intercepted locally so test visits were not sent to the live property.
 
 Use the canonical domain in `lib/seo.js`, or configure `SITE_URL` and rebuild. For a different domain, also update the domain displayed in the sharing image.
 

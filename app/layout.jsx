@@ -1,7 +1,10 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import StairTransition from "@/components/StairTransition";
+import PageTransition from "@/components/PageTransition";
 import StructuredData from "@/components/StructuredData";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { Analytics } from "@vercel/analytics/next";
 import { profile } from "@/data/profile";
 import { pageMetadata, siteDescription, siteTitle, siteUrl } from "@/lib/seo";
@@ -37,7 +40,14 @@ export default function RootLayout({ children }) {
       <body className={jetbrainsMono.variable}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
-        <main id="main-content" tabIndex={-1}>{children}</main>
+        <StairTransition />
+        <PageTransition>
+          <main id="main-content" tabIndex={-1}>{children}</main>
+        </PageTransition>
+        <noscript><style>{`
+          [data-screen-transition] { display: none !important; }
+          [data-page-reveal], [data-portrait-reveal] { opacity: 1 !important; }
+        `}</style></noscript>
         <StructuredData data={{
           "@context": "https://schema.org",
           "@graph": [
@@ -54,6 +64,7 @@ export default function RootLayout({ children }) {
             },
           ],
         }} />
+        {process.env.NODE_ENV === "production" && <GoogleAnalytics />}
         {process.env.VERCEL === "1" && <Analytics />}
       </body>
     </html>
