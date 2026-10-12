@@ -1,119 +1,24 @@
-import { FaGitAlt, FaJs, FaPhp, FaReact } from 'react-icons/fa'
+import { FaCode, FaGitAlt, FaJs, FaPhp, FaReact } from 'react-icons/fa'
 import { SiDocker, SiLaravel, SiMysql, SiNextdotjs, SiPostgresql, SiRedis, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
-import { education as educationItems, experience as experienceItems, profile } from '@/data/profile'
 import AnimatedPage from '@/components/AnimatedPage'
-
-const about = {
-  title: 'About me',
-  description: profile.summary,
-  info: [
-    {
-      fieldName: 'Name',
-      fieldValue: profile.name
-    },
-    {
-      fieldName: 'Phone',
-      fieldValue: profile.phone
-    },
-    {
-      fieldName: 'Experience',
-      fieldValue: profile.experience
-    },
-    {
-      fieldName: 'Nationality',
-      fieldValue: 'Palestinian'
-    },
-    {
-      fieldName: 'Email',
-      fieldValue: profile.email
-    },
-    {
-      fieldName: 'Languages',
-      fieldValue: 'Arabic, English, Russian'
-    },
-  ]
-}
-
-const experience = {
-  title: 'My Experience',
-  description: "My work centers on Laravel backends and full-stack products, from requirements and data modeling through deployment, integrations, and production support. I paused professional work from November 2023 to June 2025 because of war conditions in Gaza and returned in July 2025.",
-  items: experienceItems
-}
-
-const education = {
-  title: 'My Education',
-  description: "An Information Technology foundation supported by continued learning in software engineering, languages, and practical AI literacy.",
-  items: educationItems
-}
-
-const skills = {
-  title: 'My Skills',
-  description: 'My strongest skills are Laravel backend engineering and full-stack product delivery. I use Next.js for modern interfaces and work comfortably with relational data, caching, version control, and production environments.',
-  skillList: [
-    {
-      icon: <FaPhp />,
-      name: 'PHP'
-    },
-    {
-      icon: <SiLaravel />,
-      name: 'Laravel'
-    },
-    {
-      icon: <FaJs />,
-      name: 'JavaScript'
-    },
-    {
-      icon: <SiTypescript />,
-      name: 'TypeScript'
-    },
-    {
-      icon: <FaReact />,
-      name: 'React'
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: 'Next.js'
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: 'Tailwind CSS'
-    },
-    {
-      icon: <SiMysql />,
-      name: 'MySQL'
-    },
-    {
-      icon: <SiPostgresql />,
-      name: 'PostgreSQL'
-    },
-    {
-      icon: <SiRedis />,
-      name: 'Redis'
-    },
-    {
-      icon: <FaGitAlt />,
-      name: 'Git & GitHub'
-    },
-    {
-      icon: <SiDocker />,
-      name: 'Docker fundamentals'
-    },
-  ]
-}
-
-function Resume() {
+const icons = { php: FaPhp, laravel: SiLaravel, javascript: FaJs, typescript: SiTypescript, react: FaReact, nextjs: SiNextdotjs, tailwind: SiTailwindcss, mysql: SiMysql, postgresql: SiPostgresql, redis: SiRedis, git: FaGitAlt, docker: SiDocker, code: FaCode };
+function Resume({ profile, resume }) {
+  const about = { title: resume.aboutTitle, description: profile.summary, info: resume.aboutInfo.map(item => ({ fieldName: item.label, fieldValue: item.source === 'custom' ? item.value : profile[item.source] })) };
+  const experience = { title: resume.experienceTitle, description: resume.experienceDescription, items: resume.experience };
+  const education = { title: resume.educationTitle, description: resume.educationDescription, items: resume.education };
+  const skills = { title: resume.skillsTitle, description: resume.skillsDescription, skillList: resume.skills.map(skill => { const Icon = icons[skill.icon] || FaCode; return { name: skill.name, icon: <Icon /> }; }) };
   return (
     <AnimatedPage className='min-h-[80vh] flex items-center justify-center py-12 lg:py-0'
     >
       <div className="container mx-auto">
         <Tabs orientation='vertical' defaultValue='experience' className='flex flex-col lg:flex-row gap-[60px]'>
           <TabsList aria-label='Resume sections' className='flex flex-col w-full max-w-[380px] mx-auto lg:mx-0 gap-6'>
-            <TabsTrigger value='experience'>Experience</TabsTrigger>
-            <TabsTrigger value='education'>Education</TabsTrigger>
-            <TabsTrigger value='skills'>Skills</TabsTrigger>
-            <TabsTrigger value='about-me'>About me</TabsTrigger>
+            <TabsTrigger value='experience'>{resume.tabs.experience}</TabsTrigger>
+            <TabsTrigger value='education'>{resume.tabs.education}</TabsTrigger>
+            <TabsTrigger value='skills'>{resume.tabs.skills}</TabsTrigger>
+            <TabsTrigger value='about-me'>{resume.tabs.about}</TabsTrigger>
           </TabsList>
           <div className='min-h-[70vh] w-full'>
             <TabsContent value='experience' className='w-full'>

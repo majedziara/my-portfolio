@@ -10,6 +10,7 @@ export default function WorkGallery({ children, count }) {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     gallery.scrollBy({ left: direction * gallery.clientWidth, behavior: reducedMotion ? "instant" : "smooth" });
   }
+  if (count === 0) return null;
   return (
     <div>
       <div className="flex justify-end items-center gap-4 mb-6">

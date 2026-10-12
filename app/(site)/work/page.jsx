@@ -3,24 +3,22 @@ import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import WorkGallery from "@/components/WorkGallery";
 import AnimatedPage from "@/components/AnimatedPage";
 import StructuredData from "@/components/StructuredData";
-import { projects } from "@/data/profile";
+import { getSiteContent } from "@/lib/content";
 import { pageMetadata, siteUrl } from "@/lib/seo";
-export const metadata = pageMetadata(
-  "Laravel & Next.js Projects",
-  "Browse Majed Ziara’s Laravel and Next.js projects: digital stores, charity platforms, business systems, multilingual websites, and payment integrations.",
-  "/work",
-);
-export default function Work() {
+export const generateMetadata = () => pageMetadata("work");
+export default async function Work() {
+  const { work } = await getSiteContent();
+  const projects = work.projects;
   return (
     <AnimatedPage as="section" className="py-6 pb-12">
       <div className="container mx-auto">
-        <h1 className="h2 mb-6">Selected projects</h1>
+        <h1 className="h2 mb-6">{work.heading}</h1>
         <StructuredData data={{
           "@context": "https://schema.org", "@type": "ItemList",
           itemListElement: projects.map((project, index) => ({
             "@type": "ListItem", position: index + 1,
             item: { "@type": "CreativeWork", name: project.title, description: project.description,
-              url: `${siteUrl}/work#project-${project.num}`, image: `${siteUrl}${project.image}`,
+              url: `${siteUrl}/work#project-${project.num}`, image: new URL(project.image, siteUrl).href,
               creator: { "@id": `${siteUrl}/#person` }, },
           })),
         }} />
@@ -47,7 +45,7 @@ export default function Work() {
               </div>
               <div className="lg:w-1/2 order-1 lg:order-2">
                 <div className="aspect-[585/460] relative overflow-hidden rounded-md bg-white/5">
-                  <Image src={project.image} unoptimized={project.image.includes("/thumb")} fill sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 100vw" preload={index === 0} fetchPriority={index === 0 ? "high" : "auto"} className="object-cover" alt={`${project.title} project preview`} />
+                  <Image src={project.image} unoptimized={project.image.includes("/thumb") || project.image.startsWith("/api/media/")} fill sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 100vw" preload={index === 0} fetchPriority={index === 0 ? "high" : "auto"} className="object-cover" alt={`${project.title} project preview`} />
                 </div>
               </div>
             </article>

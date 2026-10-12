@@ -3,25 +3,25 @@ import Nav from "./Nav";
 import { Button } from "./ui/button";
 import MobileNav from "./MobileNav";
 
-export default function Header() {
+export default function Header({ navigation, profileName }) {
   return (
     <header className="py-8 lg:py-12 text-white">
         <div className="container mx-auto flex justify-between items-center">
-            <Link prefetch={false} href='/' aria-label="Majed Ziara home">
+            <Link prefetch={false} href='/' aria-label={`${profileName} home`}>
                 <span className="text-4xl font-semibold">
-                    Majed<span className="text-accent">.</span>
+                    {navigation.logoText}<span className="text-accent">{navigation.logoAccent}</span>
                 </span>
             </Link>
 
             {/* desktop nav */}
             <div className="hidden lg:flex items-center gap-8">
-              <Nav />
-              <Button asChild><Link prefetch={false} href='/contact'>Hire me</Link></Button>
+              <Nav links={navigation.links} />
+              <Button asChild><Link prefetch={false} href='/contact'>{navigation.hireLabel}</Link></Button>
             </div>
 
             {/* mobile nav */}
             <div className="lg:hidden">
-              <MobileNav />
+              <MobileNav navigation={navigation} profileName={profileName} />
             </div>
         </div>
     </header>

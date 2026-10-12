@@ -26,6 +26,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Dashboard
+
+Open `/admin/login` to manage contact messages, every public content section, images, CV files, navigation, SEO, and analytics. The public design and animations are retained; content is read from MongoDB on the server.
+
+Initial credentials are in the private, Git-ignored `.admin-access` file. Save them in your password manager and remove the file. Set the generated **server-only** `ADMIN_AUTH_SECRET` from `.env.local` in your hosting environment, alongside `MONGODB_URI` and `DATABASE_NAME`, before deploying.
+
+See [dashboard setup, editing, storage, and security](docs/dashboard.md) for account creation/reset and usage. Run `npm test`, `npm run lint`, and `npm run build` before deployment.
+
 ## SEO and deployment
 
 Each page includes its own title, description, canonical URL, Open Graph metadata, and Twitter card. Shared configuration is in `lib/seo.js`. The site includes structured data, `/robots.txt`, `/sitemap.xml`, a 1200 × 630 sharing image, and custom site icons.

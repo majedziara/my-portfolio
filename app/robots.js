@@ -1,7 +1,4 @@
-import { siteUrl } from "@/lib/seo";
+import { siteUrl } from '@/lib/seo';
 export default function robots() {
-  return {
-    rules: { userAgent: "*", allow: "/", disallow: "/api/" },
-    sitemap: `${siteUrl}/sitemap.xml`,
-  };
+  return { rules: { userAgent: '*', allow: ['/', '/api/media/'], disallow: ['/api/', '/admin', '/admin/'] }, sitemap: `${siteUrl}/sitemap.xml` };
 }

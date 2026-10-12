@@ -4,13 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import useMotionPreference from "./useMotionPreference";
 
-const stats = [
-  { num: 4, suffix: "+", value: "4+", text: "Years of experience" },
-  { num: 10, suffix: "+", value: "10+", text: "Projects completed" },
-  { num: 5, suffix: "–6", value: "5–6", text: "Client sites delivered at DIGO" },
-  { num: 2, suffix: "", value: "2", text: "Languages supported in products" },
-];
-export default function Stats() {
+export default function Stats({ statistics }) {
+  const stats = statistics.map(stat => ({ ...stat, value: `${stat.num}${stat.suffix}` }));
   const [inView, setInView] = useState(false);
   const statsRef = useRef(null);
   const reducedMotion = useMotionPreference();

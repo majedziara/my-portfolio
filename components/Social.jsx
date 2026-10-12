@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa'
-import { profile } from '@/data/profile'
 
-const socials = [
-  {icon: <FaGithub aria-hidden="true" />, path: profile.github, label: 'GitHub'},
-  {icon: <FaLinkedinIn aria-hidden="true" />, path: profile.linkedin, label: 'LinkedIn'},
-]
-function Social({containerStyles, iconStyles}) {
+
+function Social({containerStyles, iconStyles, profile}) {
+  const socials = [
+    {icon: <FaGithub aria-hidden="true" />, path: profile.github, label: 'GitHub'},
+    {icon: <FaLinkedinIn aria-hidden="true" />, path: profile.linkedin, label: 'LinkedIn'},
+  ];
   return (
     <div className={containerStyles}>
       {socials.map((social, index) => {

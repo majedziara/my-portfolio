@@ -7,7 +7,7 @@ import { CiMenuFries } from "react-icons/ci";
 const MobileMenu = dynamic(() => import("./MobileMenu"), {
   loading: () => <p role="status" className="sr-only">Loading navigation…</p>,
 });
-export default function MobileNav() {
+export default function MobileNav({ navigation, profileName }) {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
@@ -19,7 +19,7 @@ export default function MobileNav() {
         className="flex min-h-11 min-w-11 justify-center items-center cursor-pointer">
         <CiMenuFries aria-hidden="true" className="text-[32px] text-accent" />
       </button>
-      {mounted && <MobileMenu open={open} onOpenChange={setOpen} onCloseFocus={() => triggerRef.current?.focus()} />}
+      {mounted && <MobileMenu navigation={navigation} profileName={profileName} open={open} onOpenChange={setOpen} onCloseFocus={() => triggerRef.current?.focus()} />}
     </>
   );
 }

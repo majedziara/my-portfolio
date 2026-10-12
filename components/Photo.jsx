@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import useMotionPreference from "./useMotionPreference";
 
-export default function Photo() {
+export default function Photo({ src, alt }) {
   const reducedMotion = useMotionPreference();
 
   return (
@@ -18,8 +18,8 @@ export default function Photo() {
           animate={{ opacity: 1 }}
           transition={reducedMotion ? { duration: 0 } : { delay: 2.4, duration: 0.4, ease: "easeInOut" }}
           className="absolute w-[298px] h-[298px] lg:w-[420px] lg:h-[420px] mix-blend-difference">
-          <Image src="/assets/my-picture.webp"
-            alt="Illustrated portrait of Majed Ziara, Laravel and Next.js developer"
+          <Image src={src} unoptimized={src.startsWith("/api/media/")}
+            alt={alt}
             fill preload fetchPriority="high" sizes="(min-width: 1024px) 420px, 298px"
             className="object-contain rounded-full" />
         </motion.div>
