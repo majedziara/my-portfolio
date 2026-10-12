@@ -1,8 +1,6 @@
 import Script from "next/script";
 
-const measurementId = "G-T8HQENKS1N";
-
-export default function GoogleAnalytics() {
+export default function GoogleAnalytics({ measurementId }) {
   return (
     <>
       <Script id="google-analytics-init" strategy="afterInteractive">

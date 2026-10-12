@@ -2,6 +2,8 @@
 
 Verified locally on 2026-10-10 against the production build of Next.js 16.4.0 and React 19.2.8.
 
+This records the earlier SEO/asset audit. The MongoDB dashboard added on 2026-10-12 now renders public pages and the sitemap dynamically; the earlier prerendering and Lighthouse measurements below are historical. Current dashboard and dynamic-content checks are documented in [dashboard.md](dashboard.md).
+
 ## Implemented
 
 - Distinct titles, descriptions, canonical URLs, Open Graph metadata, and Twitter cards for all five public pages.
@@ -49,7 +51,7 @@ The full audit still reports five entries from one development dependency chain:
 
 ## Lighthouse results
 
-These measurements were captured before restoring the original animations. They are historical results and do not describe the current animated version. The restored page reveals intentionally wait for the original animation timing, which can affect paint measurements.
+These measurements were captured before restoring the original animations and adding MongoDB content. They are historical results and do not describe the current version. The restored page reveals intentionally wait for the original animation timing, and server-side database reads also affect response and paint measurements.
 
 Lighthouse 13.5.0 against the local production server. The resume page was remeasured after its final optimization; its mobile score is the median of three runs (91, 87, 89). Other rows use the final full-page audit for those routes.
 

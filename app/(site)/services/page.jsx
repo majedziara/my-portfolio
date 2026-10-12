@@ -1,16 +1,18 @@
 import { BsArrowDownRight } from "react-icons/bs"
 import Link from "next/link"
-import { services } from "@/data/profile"
+import { getSiteContent } from "@/lib/content"
 import StructuredData from "@/components/StructuredData"
 import AnimatedPage from "@/components/AnimatedPage"
 import { pageMetadata, siteUrl } from "@/lib/seo"
-export const metadata = pageMetadata("Laravel & Full-Stack Development Services", "Laravel backend development, full-stack Next.js applications, payment and API integrations, and ongoing product support by Majed Ziara. Available remotely.", "/services")
+export const generateMetadata = () => pageMetadata("services")
 
-function Services() {
+async function Services() {
+  const { services: section } = await getSiteContent();
+  const services = section.items;
   return (
     <section className='min-h-[80vh] flex flex-col justify-center py-12 lg:py-0'>
       <div className="container mx-auto">
-        <h1 className="h2 mb-10">Development services</h1>
+        <h1 className="h2 mb-10">{section.heading}</h1>
         <StructuredData data={{
           "@context": "https://schema.org", "@type": "ItemList",
           itemListElement: services.map((service, index) => ({
